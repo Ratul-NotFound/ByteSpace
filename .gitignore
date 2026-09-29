@@ -39,6 +39,9 @@ lerna-debug.log*
 coverage/
 .nyc_output/
 
+# typescript incremental build cache
+*.tsbuildinfo
+
 # tooling caches
 .cache/
 .eslintcache
