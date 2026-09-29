@@ -1,6 +1,6 @@
 import { Hero } from '../components/Hero/Hero';
-import { Categories } from '../components/Categories/Categories';
-import { Stats } from '../components/Stats/Stats';
+import { Partners } from '../components/Partners/Partners';
+import { Growth } from '../components/Growth/Growth';
 import { Testimonials } from '../components/Testimonials/Testimonials';
 import { CallToAction } from '../components/CallToAction/CallToAction';
 import { Footer } from '../components/Footer/Footer';
@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <main>
         <Hero />
-        <Stats />
-        <Categories />
+        <Partners />
+        <Growth />
         <Testimonials />
         <CallToAction />
       </main>
