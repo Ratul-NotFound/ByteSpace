@@ -1,0 +1,66 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# build output
+dist/
+dist-ssr/
+build/
+*.local
+
+# environment
+.env
+.env.*
+!.env.example
+
+# editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# test output
+coverage/
+.nyc_output/
+
+# tooling caches
+.cache/
+.eslintcache
+.stylelintcache
+.turbo/
+.parcel-cache/
+
+# local agent / assistant tooling instructions and scratch data
+.claude/
+.cursor/
+.aider*
+.continue/
+AGENTS.md
+CLAUDE.md
+.copilot/
+GEMINI.md
+.dev.vars
+
+# figma export scratch data (regenerate; never commit)
+.design/
+figma.json
+figma_*.json
+node.json
+nodes.json
+*.figma.json
