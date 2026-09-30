@@ -119,19 +119,19 @@ export function Courses() {
   const [activeCategory, setActiveCategory] = useState('Frontend');
 
   return (
-    <section id="courses" className="bg-[#FAF7EE] py-20 lg:py-24" aria-labelledby="courses-heading">
-      <div className="mx-auto w-[1200px] max-w-full px-6">
+    <section id="courses" className="bg-[#FAF7EE] py-14 sm:py-20 lg:py-24" aria-labelledby="courses-heading">
+      <div className="mx-auto w-[1200px] max-w-full px-4 sm:px-6">
         {/* Section Header (Figma Node #12:101) */}
-        <div className="mx-auto flex max-w-[917px] flex-col items-center gap-4 text-center">
+        <div className="mx-auto flex max-w-[917px] flex-col items-center gap-3 sm:gap-4 text-center">
           <h2
             id="courses-heading"
-            className="font-heading text-[32px] sm:text-[40px] lg:text-[44px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]"
+            className="font-heading text-[28px] sm:text-[36px] lg:text-[44px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]"
           >
             Discover Your Passion,
             <br />
             Build Your Skills
           </h2>
-          <p className="max-w-[760px] text-[16px] sm:text-[18px] leading-[1.6] text-muted">
+          <p className="max-w-[760px] text-[15px] sm:text-[18px] leading-[1.6] text-muted">
             At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety
             of courses across different fields, from technology to the arts, and make a difference
             in your career and life.
@@ -139,9 +139,9 @@ export function Courses() {
         </div>
 
         {/* Category Filter Pills (Exact Figma Nodes #21:33, #21:56, #21:63) */}
-        <div className="mt-12 flex flex-col items-center gap-3 sm:gap-4">
+        <div className="mt-8 sm:mt-12 flex flex-col items-center gap-2.5 sm:gap-4">
           {/* Row 1 */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {categoryPills.row1.map((cat) => {
               const isActive = activeCategory === cat;
               return (
@@ -149,7 +149,7 @@ export function Courses() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   type="button"
-                  className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
+                  className={`rounded-full px-3.5 sm:px-5 py-1.5 sm:py-2 text-[13px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
                       : 'bg-[#F5F5F6] text-[#242528] hover:bg-[#EBECEF]'
@@ -162,7 +162,7 @@ export function Courses() {
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {categoryPills.row2.map((cat) => {
               const isActive = activeCategory === cat;
               return (
@@ -170,7 +170,7 @@ export function Courses() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   type="button"
-                  className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
+                  className={`rounded-full px-3.5 sm:px-5 py-1.5 sm:py-2 text-[13px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
                       : 'bg-[#F5F5F6] text-[#242528] hover:bg-[#EBECEF]'
@@ -183,7 +183,7 @@ export function Courses() {
           </div>
 
           {/* Row 3 */}
-          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {categoryPills.row3.map((cat) => {
               const isActive = activeCategory === cat;
               return (
@@ -191,7 +191,7 @@ export function Courses() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   type="button"
-                  className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
+                  className={`rounded-full px-3.5 sm:px-5 py-1.5 sm:py-2 text-[13px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
                       : 'bg-[#F5F5F6] text-[#242528] hover:bg-[#EBECEF]'
@@ -203,7 +203,7 @@ export function Courses() {
             })}
             <button
               type="button"
-              className="px-3 py-2 text-[14px] sm:text-[15px] font-medium text-brand hover:underline"
+              className="px-3 py-1.5 sm:py-2 text-[13px] sm:text-[15px] font-medium text-brand hover:underline"
             >
               + More
             </button>
@@ -211,11 +211,11 @@ export function Courses() {
         </div>
 
         {/* 6 Course Cards Grid (Exact Figma Node #33:683, EL-cfe85f8c) */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="mt-10 sm:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {courses.map((course) => (
             <article
               key={course.id}
-              className="group flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#CED0D3] bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-xl"
+              className="group flex flex-col justify-between overflow-hidden rounded-[20px] sm:rounded-[24px] border border-[#CED0D3] bg-white p-4 sm:p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-xl"
             >
               {/* Card Photo with 3 Dark Frosted Floating Badges */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px]">

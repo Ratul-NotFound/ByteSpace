@@ -30,33 +30,33 @@ export function Hero() {
 
       <Header />
 
-      <div className="relative z-10 mx-auto flex w-[1200px] max-w-full flex-col items-center gap-[40px] px-6 pt-[20px]">
+      <div className="relative z-10 mx-auto flex w-[1200px] max-w-full flex-col items-center gap-[30px] sm:gap-[40px] px-4 sm:px-6 pt-[10px] sm:pt-[20px]">
         {/* Hero Title & Subtext */}
-        <div className="flex flex-col items-center gap-6 text-center">
-          <h1 className="max-w-[935px] font-heading text-[44px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.15] tracking-[-0.02em] text-white">
+        <div className="flex flex-col items-center gap-4 sm:gap-6 text-center">
+          <h1 className="max-w-[935px] font-heading text-[32px] xs:text-[40px] sm:text-[54px] lg:text-[72px] font-semibold leading-[1.15] tracking-[-0.02em] text-white">
             Get Access to Hundreds
             <br />
             Courses Available
           </h1>
-          <p className="max-w-[650px] text-[16px] sm:text-[18px] leading-[1.6] text-subtle">
+          <p className="max-w-[650px] text-[15px] sm:text-[18px] leading-[1.6] text-subtle px-2">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
           </p>
         </div>
 
         {/* Search Bar */}
         <form
-          className="flex w-full max-w-[560px] items-center gap-3 sm:gap-4"
+          className="flex w-full max-w-[560px] items-center gap-2 sm:gap-4"
           role="search"
           onSubmit={(e) => e.preventDefault()}
         >
-          <label className="flex h-[52px] flex-1 items-center gap-3 rounded-pill bg-white px-5 sm:px-6 shadow-sm">
+          <label className="flex h-[48px] sm:h-[52px] flex-1 items-center gap-2 sm:gap-3 rounded-pill bg-white px-4 sm:px-6 shadow-sm">
             <span className="sr-only">Search courses</span>
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth={1.5}
-              className="size-5 shrink-0 text-muted"
+              className="size-4 sm:size-5 shrink-0 text-muted"
               aria-hidden="true"
             >
               <circle cx="11" cy="11" r="6" />
@@ -65,12 +65,12 @@ export function Hero() {
             <input
               type="search"
               placeholder="Course, topic, creator"
-              className="w-full bg-transparent text-[16px] sm:text-[18px] leading-[1.6] text-ink outline-none placeholder:text-muted"
+              className="w-full bg-transparent text-[14px] sm:text-[16px] lg:text-[18px] leading-[1.6] text-ink outline-none placeholder:text-muted"
             />
           </label>
           <button
             type="submit"
-            className="inline-flex h-[52px] items-center justify-center rounded-pill bg-accent px-8 text-[16px] sm:text-[18px] font-medium leading-[1.2] text-ink shadow-sm transition-all hover:opacity-90"
+            className="inline-flex h-[48px] sm:h-[52px] items-center justify-center rounded-pill bg-accent px-5 sm:px-8 text-[15px] sm:text-[18px] font-medium leading-[1.2] text-ink shadow-sm transition-all hover:opacity-90 shrink-0"
           >
             Search
           </button>
@@ -78,20 +78,20 @@ export function Hero() {
       </div>
 
       {/* Hero Visual Area with Person & 3 Floating Metric Badges */}
-      <div className="relative mx-auto mt-4 h-[480px] sm:h-[520px] w-full max-w-[760px] px-4">
+      <div className="relative mx-auto mt-4 h-[440px] sm:h-[520px] w-full max-w-[760px] px-2 sm:px-4">
         {/* Main Hero Person */}
         <img
           src="/assets/hero/hero-person.png"
           alt="A course creator presenting to students"
           width={578}
           height={541}
-          className="relative z-10 mx-auto h-[480px] sm:h-[530px] w-auto max-w-full object-contain"
+          className="relative z-10 mx-auto h-[440px] sm:h-[530px] w-auto max-w-full object-contain"
         />
 
         {/* Badge 1: UI/UX Design (Figma Node #46:126) */}
-        <div className="absolute left-2 sm:-left-4 top-[100px] z-20 rounded-[16px] bg-white p-4 shadow-xl">
-          <p className="font-medium text-[15px] leading-[1.2] text-ink">UI/UX Design</p>
-          <div className="mt-1 flex items-center gap-2 text-[12px] text-muted">
+        <div className="hidden xs:block absolute left-1 sm:-left-4 top-[80px] sm:top-[100px] z-20 rounded-[14px] sm:rounded-[16px] bg-white p-3 sm:p-4 shadow-xl scale-90 sm:scale-100 origin-top-left">
+          <p className="font-medium text-[13px] sm:text-[15px] leading-[1.2] text-ink">UI/UX Design</p>
+          <div className="mt-1 flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-[12px] text-muted">
             <span>200 Courses</span>
             <span>•</span>
             <span>1000+ Students</span>
@@ -99,38 +99,38 @@ export function Hero() {
         </div>
 
         {/* Badge 2: Learning Progress 55% (Figma Node #1:1797) */}
-        <div className="absolute right-2 sm:-right-4 top-[80px] z-20 w-[200px] sm:w-[220px] rounded-[16px] bg-white p-4 shadow-xl">
-          <p className="text-[13px] font-medium leading-[1.2] text-ink">Learning Progress</p>
-          <p className="mt-1 font-heading text-[38px] sm:text-[44px] font-semibold leading-[1.1] tracking-[-0.01em] text-ink">
+        <div className="absolute right-1 sm:-right-4 top-[60px] sm:top-[80px] z-20 w-[150px] sm:w-[220px] rounded-[14px] sm:rounded-[16px] bg-white p-3 sm:p-4 shadow-xl scale-90 sm:scale-100 origin-top-right">
+          <p className="text-[11px] sm:text-[13px] font-medium leading-[1.2] text-ink">Learning Progress</p>
+          <p className="mt-0.5 sm:mt-1 font-heading text-[28px] sm:text-[44px] font-semibold leading-[1.1] tracking-[-0.01em] text-ink">
             55%
           </p>
-          <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-[#F0F1F3]">
+          <div className="mt-1.5 sm:mt-2 h-1.5 sm:h-2 w-full overflow-hidden rounded-full bg-[#F0F1F3]">
             <div className="h-full w-[55%] rounded-full bg-accent" />
           </div>
         </div>
 
         {/* Badge 3: Happy Students with Avatar Stack (Figma Node #1:1821) */}
-        <div className="absolute left-4 sm:left-2 bottom-4 z-20 rounded-[16px] bg-white p-4 shadow-xl">
-          <div className="flex items-center justify-between gap-4">
-            <p className="text-[14px] font-medium leading-[1.2] text-ink">Happy Students</p>
-            <div className="flex items-center gap-1 text-[12px] text-muted">
+        <div className="absolute left-1 sm:left-2 bottom-2 sm:bottom-4 z-20 rounded-[14px] sm:rounded-[16px] bg-white p-3 sm:p-4 shadow-xl scale-90 sm:scale-100 origin-bottom-left">
+          <div className="flex items-center justify-between gap-3 sm:gap-4">
+            <p className="text-[12px] sm:text-[14px] font-medium leading-[1.2] text-ink">Happy Students</p>
+            <div className="flex items-center gap-1 text-[11px] sm:text-[12px] text-muted">
               <span className="font-semibold text-ink">4.5</span>
               <span>(240)</span>
-              <svg viewBox="0 0 24 24" fill="#D4FB20" className="size-3.5">
+              <svg viewBox="0 0 24 24" fill="#D4FB20" className="size-3 sm:size-3.5">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
             </div>
           </div>
-          <div className="mt-3 flex items-center -space-x-2">
+          <div className="mt-2 sm:mt-3 flex items-center -space-x-1.5 sm:-space-x-2">
             {['/assets/testimonials/sarah.png', '/assets/testimonials/james.png', '/assets/testimonials/alex.png'].map((src, i) => (
               <img
                 key={i}
                 src={src}
                 alt=""
-                className="size-8 rounded-full border-2 border-white object-cover"
+                className="size-6 sm:size-8 rounded-full border-2 border-white object-cover"
               />
             ))}
-            <span className="flex size-8 items-center justify-center rounded-full border-2 border-white bg-accent text-[11px] font-bold text-ink">
+            <span className="flex size-6 sm:size-8 items-center justify-center rounded-full border-2 border-white bg-accent text-[10px] sm:text-[11px] font-bold text-ink">
               2K+
             </span>
           </div>

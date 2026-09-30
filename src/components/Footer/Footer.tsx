@@ -6,15 +6,15 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#CED0D3] bg-[#FAF7EE] py-16 lg:py-20 text-ink">
-      <div className="mx-auto flex w-[1200px] max-w-full flex-col gap-16 lg:gap-24 px-6">
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-16">
+    <footer className="border-t border-[#CED0D3] bg-[#FAF7EE] py-12 sm:py-16 lg:py-20 text-ink">
+      <div className="mx-auto flex w-[1200px] max-w-full flex-col gap-12 sm:gap-16 lg:gap-24 px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-10 sm:gap-12 lg:gap-16">
           {/* Left Column: Brand & Newsletter */}
-          <div className="flex max-w-[500px] flex-col items-start gap-8">
-            <div className="flex flex-col items-start gap-4">
+          <div className="flex max-w-[500px] flex-col items-start gap-6 sm:gap-8">
+            <div className="flex flex-col items-start gap-3 sm:gap-4">
               <span className="flex items-center gap-2">
-                <img src="/assets/hero/logo-mark.svg" alt="" width={29} height={32} className="h-8 w-[29px]" />
-                <span className="font-display text-[24px] font-bold text-ink">ByteSpace</span>
+                <img src="/assets/hero/logo-mark.svg" alt="" width={29} height={32} className="h-7 w-[26px] sm:h-8 sm:w-[29px]" />
+                <span className="font-display text-[22px] sm:text-[24px] font-bold text-ink">ByteSpace</span>
               </span>
               <p className="text-[14px] sm:text-[15px] leading-[1.6] text-muted">
                 Stay Up to date with our latest features and releases by joining our newsletter.
@@ -22,7 +22,7 @@ export function Footer() {
             </div>
 
             <form className="flex w-full flex-col sm:flex-row items-stretch sm:items-center gap-3" onSubmit={(e) => e.preventDefault()}>
-              <label className="flex h-[52px] flex-1 items-center rounded-full border border-[#CED0D3] bg-white px-5 sm:px-6 shadow-sm">
+              <label className="flex h-[48px] sm:h-[52px] flex-1 items-center rounded-full border border-[#CED0D3] bg-white px-4 sm:px-6 shadow-sm">
                 <span className="sr-only">Email address</span>
                 <input
                   type="email"
@@ -32,7 +32,7 @@ export function Footer() {
               </label>
               <button
                 type="submit"
-                className="inline-flex h-[52px] items-center justify-center rounded-full bg-accent px-8 text-[15px] sm:text-[16px] font-medium leading-6 text-ink shadow-sm transition-opacity hover:opacity-90"
+                className="inline-flex h-[48px] sm:h-[52px] items-center justify-center rounded-full bg-accent px-6 sm:px-8 text-[15px] sm:text-[16px] font-medium leading-6 text-ink shadow-sm transition-opacity hover:opacity-90 shrink-0"
               >
                 Search
               </button>

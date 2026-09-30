@@ -67,17 +67,17 @@ function CategoryIcon({ type }: { type: Category['icon'] }) {
 
 export function Categories() {
   return (
-    <section id="categories" className="bg-[#FAF7EE] py-16 lg:py-20" aria-labelledby="categories-heading">
-      <div className="mx-auto w-[1200px] max-w-full px-6">
+    <section id="categories" className="bg-[#FAF7EE] py-12 sm:py-16 lg:py-20" aria-labelledby="categories-heading">
+      <div className="mx-auto w-[1200px] max-w-full px-4 sm:px-6">
         {/* Heading */}
-        <div className="mx-auto flex max-w-[917px] flex-col items-center gap-4 text-center">
+        <div className="mx-auto flex max-w-[917px] flex-col items-center gap-3 sm:gap-4 text-center">
           <h2
             id="categories-heading"
-            className="font-heading text-[28px] sm:text-[34px] lg:text-[36px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]"
+            className="font-heading text-[26px] sm:text-[34px] lg:text-[36px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]"
           >
             Explore Diverse Learning Paths at Bytespace
           </h2>
-          <p className="max-w-[760px] text-[16px] sm:text-[18px] leading-[1.6] text-muted">
+          <p className="max-w-[760px] text-[15px] sm:text-[18px] leading-[1.6] text-muted">
             At Bytespace, we believe in empowering individuals through knowledge. Our diverse range
             of courses spans various fields, ensuring there's something for everyone. Unleash your
             potential and explore our carefully curated categories.
@@ -85,19 +85,19 @@ export function Categories() {
         </div>
 
         {/* 6 Category Cards in a Single Row (Exact Figma Screenshot Layout) */}
-        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-5">
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className="group flex flex-col items-center justify-center rounded-[20px] border border-[#E5E7EB] bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center justify-center rounded-[18px] sm:rounded-[20px] border border-[#E5E7EB] bg-white p-4 sm:p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-md cursor-pointer"
             >
               {/* Circular Lime Icon Badge */}
-              <div className="flex size-14 items-center justify-center rounded-full bg-accent transition-transform duration-200 group-hover:scale-110">
+              <div className="flex size-12 sm:size-14 items-center justify-center rounded-full bg-accent transition-transform duration-200 group-hover:scale-110">
                 <CategoryIcon type={cat.icon} />
               </div>
 
               {/* Category Name */}
-              <h3 className="mt-4 font-heading text-[16px] sm:text-[17px] font-semibold text-[#040819] transition-colors group-hover:text-brand text-center">
+              <h3 className="mt-3 sm:mt-4 font-heading text-[15px] sm:text-[17px] font-semibold text-[#040819] transition-colors group-hover:text-brand text-center">
                 {cat.title}
               </h3>
             </div>

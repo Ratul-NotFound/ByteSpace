@@ -8,9 +8,9 @@ const partnerLogos = [
 
 export function Partners() {
   return (
-    <section className="bg-[#FAF7EE] py-14 sm:py-16" aria-label="Our partners">
-      <div className="mx-auto w-[1200px] max-w-full px-6">
-        <ul className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 lg:gap-[72px]">
+    <section className="bg-[#FAF7EE] py-10 sm:py-16" aria-label="Our partners">
+      <div className="mx-auto w-[1200px] max-w-full px-4 sm:px-6">
+        <ul className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 lg:gap-[72px]">
           {partnerLogos.map((logo) => (
             <li key={logo.src} className="flex items-center justify-center opacity-70 transition-opacity hover:opacity-100">
               <img
@@ -18,7 +18,7 @@ export function Partners() {
                 alt="Partner logo"
                 width={logo.width}
                 height={logo.height}
-                className="h-[34px] sm:h-[38px] w-auto max-w-[150px] sm:max-w-[168px] object-contain"
+                className="h-[28px] sm:h-[36px] w-auto max-w-[120px] sm:max-w-[168px] object-contain"
               />
             </li>
           ))}
