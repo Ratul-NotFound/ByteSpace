@@ -24,26 +24,30 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-[#fafafa] py-[74px]">
+    <section className="relative overflow-hidden bg-[#FAF7EE] py-20 lg:py-24">
+      {/* Decorative Glow Elements */}
       <img
         src="/assets/testimonials/glow-left.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-[-442px] top-[149px] size-[1137px]"
+        className="pointer-events-none absolute -left-[442px] top-[149px] size-[1137px] opacity-70"
       />
       <img
         src="/assets/testimonials/glow-right.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-[-241px] size-[1137px]"
+        className="pointer-events-none absolute -right-[400px] -top-[241px] size-[1137px] opacity-70"
       />
 
-      <div className="relative mx-auto flex w-[1200px] max-w-full flex-col gap-[72px] px-6">
-        <div className="flex items-end gap-[43px]">
-          <h2 className="w-[577px] shrink-0 font-heading text-[44px] font-semibold leading-[1.2] tracking-[-0.01em] text-black">
-            Discover What Our Community Is Saying
+      <div className="relative mx-auto flex w-[1200px] max-w-full flex-col gap-14 lg:gap-16 px-6">
+        {/* Header (Left Title, Right Description) */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-12">
+          <h2 className="max-w-[540px] font-heading text-[32px] sm:text-[40px] lg:text-[44px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]">
+            Discover What Our
+            <br />
+            Community Is Saying
           </h2>
-          <p className="w-[580px] text-[18px] leading-[1.6] text-[#4f4f4f]">
+          <p className="max-w-[560px] text-[16px] sm:text-[18px] leading-[1.6] text-muted">
             At ByteSpace, our vibrant community of learners and creators is at the heart of what we
             do. Hear directly from those who have experienced the transformative journey of learning
             and creating on our platform. Explore testimonials that reflect the diverse perspectives
@@ -51,29 +55,30 @@ export function Testimonials() {
           </p>
         </div>
 
-        <ul className="flex items-start gap-[41px]">
+        {/* 3 Testimonial Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((item) => (
-            <li
+            <div
               key={item.name}
-              className="flex shrink-0 flex-col items-start gap-6 rounded-card bg-white p-6"
+              className="flex flex-col items-start gap-6 rounded-[24px] border border-[#CED0D3] bg-white p-7 shadow-sm transition-all hover:shadow-md"
             >
               <img
                 src={item.avatar}
-                alt=""
+                alt={item.name}
                 width={80}
                 height={80}
-                className="size-20 rounded-full object-cover"
+                className="size-16 sm:size-20 rounded-full object-cover"
               />
               <div className="flex flex-col items-start">
-                <p className="font-heading text-[20px] font-semibold leading-7 tracking-[-0.01em] text-black">
+                <p className="font-heading text-[18px] sm:text-[20px] font-semibold leading-[1.3] text-[#040819]">
                   {item.name}
                 </p>
-                <p className="text-[18px] leading-[1.6] text-brand">{item.role}</p>
+                <p className="text-[14px] sm:text-[16px] font-medium leading-[1.4] text-brand">{item.role}</p>
               </div>
-              <p className="w-[326px] text-[18px] leading-[1.6] text-[#4f4f4f]">{item.quote}</p>
-            </li>
+              <p className="text-[15px] sm:text-[16px] leading-[1.6] text-[#4F4F4F]">{item.quote}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
