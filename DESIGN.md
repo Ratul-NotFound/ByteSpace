@@ -62,17 +62,18 @@ All values are implemented in `src/styles/tokens.css` and `tailwind.config.ts`.
 | Grid columns (desktop) | 3 columns for cards (373px each) |
 | Gap between grid items | 40px |
 | Section vertical padding | 72px - 96px |
-| Header height | 120px |
+| Header height | 80px (mobile) / 120px (desktop) |
 
 ### Breakpoints
 
-| Name | Min width | Notes |
+| Name | Min width | Layout Behavior |
 | --- | --- | --- |
-| `sm` | 640px | Mobile landscape |
-| `md` | 768px | Tablet |
-| `lg` | 1024px | Small laptop |
-| `xl` | 1280px | Standard desktop |
-| `2xl` | 1440px | Design frame width |
+| `xs` | 360px | Mobile portrait: 1-col cards, 2-col categories, mobile drawer menu, fluid search bar |
+| `sm` | 640px | Mobile landscape: 2-col cards, wrapped pills, full floating metric badges |
+| `md` | 768px | Tablet: 2-col courses, 3-col categories, desktop header navigation reveals |
+| `lg` | 1024px | Small laptop: 3-col courses, 6-col categories, 2-col Growth & CTA showcase |
+| `xl` | 1280px | Standard desktop: 1200px max container centered |
+| `2xl` | 1440px | Figma design frame reference width (1:1 pixel match) |
 
 ---
 
