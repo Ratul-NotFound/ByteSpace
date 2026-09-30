@@ -3,187 +3,156 @@ import { useState } from 'react';
 interface Course {
   id: string;
   title: string;
-  category: string;
-  creator: {
-    name: string;
-    avatar: string;
-  };
-  image: string;
-  lessons: number;
+  creator: string;
+  coverImage: string;
+  lessons: string;
   duration: string;
+  comments: string;
   level: string;
   price: string;
-  rating: number;
-  reviews: number;
+  rating: string;
 }
 
-const categoryRows = {
+const categoryPills = {
   row1: [
-    'All Category',
-    'UI/UX Design',
-    'Web Development',
-    'Graphic Design',
-    'Digital Marketing',
-    'Business',
-    'Photography',
-    'Music & Audio',
+    'Frontend',
+    'UI/UX',
+    'Backend Development',
+    'Data Science',
+    'Mobile Apps',
+    'Cyber Security',
+    'DevOps & Cloud',
+    'AI and Machine Learning',
   ],
   row2: [
-    'Mobile Development',
+    'Digital Marketing',
+    'Graphic Design',
+    'Motion',
+    'Product and Project Management',
     'Game Design',
-    'Illustration',
-    'Video Editing',
-    'Finance & Accounting',
-    'Data Science',
+    'Photography',
   ],
   row3: [
-    'Artificial Intelligence',
-    'Animation & 3D',
-    'Personal Development',
-    'Writing & Content',
+    '3D Modeling',
+    'Video Production',
+    'Web3 & Blockchain',
+    'Writing',
   ],
 };
 
 const courses: Course[] = [
   {
     id: '1',
-    title: 'Learn Figma from Scratch: Master UI/UX Design System',
-    category: 'UI/UX Design',
-    creator: {
-      name: 'purepearl studio',
-      avatar: '/assets/testimonials/alex.png',
-    },
-    image: '/assets/growth/growth-bottom.jpg',
-    lessons: 17,
+    title: 'Learn Figma from Basic',
+    creator: 'purepearl studio',
+    coverImage: '/assets/courses/cover-1.png',
+    lessons: '17 Lessons',
     duration: '2 hours 16 mins',
+    comments: '59 Comments',
     level: 'Beginner',
-    price: '$25/lifetime',
-    rating: 4.9,
-    reviews: 320,
+    price: '$25',
+    rating: '4.5',
   },
   {
     id: '2',
-    title: 'Fullstack Web Development with React, TypeScript & Node',
-    category: 'Web Development',
-    creator: {
-      name: 'Sarah Mitchell',
-      avatar: '/assets/testimonials/sarah.png',
-    },
-    image: '/assets/growth/growth-bottom.jpg',
-    lessons: 24,
-    duration: '6 hours 45 mins',
-    level: 'Intermediate',
-    price: '$35/lifetime',
-    rating: 4.8,
-    reviews: 412,
+    title: 'Build Digital Asset',
+    creator: 'purepearl studio',
+    coverImage: '/assets/courses/cover-2.png',
+    lessons: '17 Lessons',
+    duration: '2 hours 16 mins',
+    comments: '59 Comments',
+    level: 'Beginner',
+    price: '$25',
+    rating: '4.5',
   },
   {
     id: '3',
-    title: 'Brand Identity Design: Visual Strategy & Iconography',
-    category: 'Graphic Design',
-    creator: {
-      name: 'James Lucas',
-      avatar: '/assets/testimonials/james.png',
-    },
-    image: '/assets/growth/growth-bottom.jpg',
-    lessons: 14,
-    duration: '3 hours 10 mins',
-    level: 'All Levels',
-    price: '$29/lifetime',
-    rating: 4.9,
-    reviews: 188,
+    title: 'the Power of Big Data',
+    creator: 'purepearl studio',
+    coverImage: '/assets/courses/cover-3.png',
+    lessons: '17 Lessons',
+    duration: '2 hours 16 mins',
+    comments: '59 Comments',
+    level: 'Beginner',
+    price: '$25',
+    rating: '4.5',
   },
   {
     id: '4',
-    title: 'Digital Marketing Mastery: Social Growth & SEO Strategy',
-    category: 'Digital Marketing',
-    creator: {
-      name: 'Elena Rostova',
-      avatar: '/assets/testimonials/sarah.png',
-    },
-    image: '/assets/growth/growth-bottom.jpg',
-    lessons: 20,
-    duration: '4 hours 30 mins',
+    title: 'Mastering Productivity & Workflow',
+    creator: 'purepearl studio',
+    coverImage: '/assets/courses/cover-4.png',
+    lessons: '17 Lessons',
+    duration: '2 hours 16 mins',
+    comments: '59 Comments',
     level: 'Beginner',
-    price: '$22/lifetime',
-    rating: 4.7,
-    reviews: 245,
+    price: '$25',
+    rating: '4.5',
   },
   {
     id: '5',
-    title: 'Financial Modeling & Valuation for Modern Startups',
-    category: 'Finance & Accounting',
-    creator: {
-      name: 'Marcus Vance',
-      avatar: '/assets/testimonials/james.png',
-    },
-    image: '/assets/growth/growth-bottom.jpg',
-    lessons: 18,
-    duration: '5 hours 15 mins',
-    level: 'Advanced',
-    price: '$45/lifetime',
-    rating: 4.9,
-    reviews: 160,
+    title: 'Mastering Money Management',
+    creator: 'purepearl studio',
+    coverImage: '/assets/courses/cover-5.png',
+    lessons: '17 Lessons',
+    duration: '2 hours 16 mins',
+    comments: '59 Comments',
+    level: 'Beginner',
+    price: '$25',
+    rating: '4.5',
   },
   {
     id: '6',
-    title: 'Applied AI & Machine Learning for Practical Applications',
-    category: 'Artificial Intelligence',
-    creator: {
-      name: 'Dr. Alan Chen',
-      avatar: '/assets/testimonials/alex.png',
-    },
-    image: '/assets/growth/growth-bottom.jpg',
-    lessons: 30,
-    duration: '8 hours 20 mins',
-    level: 'Intermediate',
-    price: '$49/lifetime',
-    rating: 5.0,
-    reviews: 580,
+    title: 'From Idea to Startup Formation',
+    creator: 'purepearl studio',
+    coverImage: '/assets/courses/cover-6.png',
+    lessons: '17 Lessons',
+    duration: '2 hours 16 mins',
+    comments: '59 Comments',
+    level: 'Beginner',
+    price: '$25',
+    rating: '4.5',
   },
 ];
 
 export function Courses() {
-  const [selectedCategory, setSelectedCategory] = useState('All Category');
-
-  const filteredCourses =
-    selectedCategory === 'All Category'
-      ? courses
-      : courses.filter((c) => c.category === selectedCategory);
+  const [activeCategory, setActiveCategory] = useState('Frontend');
 
   return (
-    <section id="courses" className="bg-white py-20 lg:py-24" aria-labelledby="courses-heading">
+    <section id="courses" className="bg-[#FAF7EE] py-20 lg:py-24" aria-labelledby="courses-heading">
       <div className="mx-auto w-[1200px] max-w-full px-6">
         {/* Section Header (Figma Node #12:101) */}
         <div className="mx-auto flex max-w-[917px] flex-col items-center gap-4 text-center">
           <h2
             id="courses-heading"
-            className="max-w-[588px] font-heading text-[32px] sm:text-[40px] lg:text-[44px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]"
+            className="font-heading text-[32px] sm:text-[40px] lg:text-[44px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#040819]"
           >
-            Discover Your Passion, Build Your Skills
+            Discover Your Passion,
+            <br />
+            Build Your Skills
           </h2>
-          <p className="text-[16px] sm:text-[18px] leading-[1.6] text-muted">
+          <p className="max-w-[760px] text-[16px] sm:text-[18px] leading-[1.6] text-muted">
             At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety
             of courses across different fields, from technology to the arts, and make a difference
             in your career and life.
           </p>
         </div>
 
-        {/* Category Pills Tabs (Figma Nodes #21:33, #21:56, #21:63) */}
-        <div className="mt-12 flex flex-col items-center gap-4">
+        {/* Category Filter Pills (Exact Figma Nodes #21:33, #21:56, #21:63) */}
+        <div className="mt-12 flex flex-col items-center gap-3 sm:gap-4">
           {/* Row 1 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            {categoryRows.row1.map((cat) => {
-              const isActive = selectedCategory === cat;
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            {categoryPills.row1.map((cat) => {
+              const isActive = activeCategory === cat;
               return (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => setActiveCategory(cat)}
                   type="button"
-                  className={`rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-[14px] sm:text-[16px] font-medium leading-[1.2] transition-all ${
+                  className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
-                      : 'bg-surface text-ink hover:bg-[#EAEBED]'
+                      : 'border border-[#CED0D3] bg-white text-ink hover:bg-[#F3F4F6]'
                   }`}
                 >
                   {cat}
@@ -193,18 +162,18 @@ export function Courses() {
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            {categoryRows.row2.map((cat) => {
-              const isActive = selectedCategory === cat;
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            {categoryPills.row2.map((cat) => {
+              const isActive = activeCategory === cat;
               return (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => setActiveCategory(cat)}
                   type="button"
-                  className={`rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-[14px] sm:text-[16px] font-medium leading-[1.2] transition-all ${
+                  className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
-                      : 'bg-surface text-ink hover:bg-[#EAEBED]'
+                      : 'border border-[#CED0D3] bg-white text-ink hover:bg-[#F3F4F6]'
                   }`}
                 >
                   {cat}
@@ -214,18 +183,18 @@ export function Courses() {
           </div>
 
           {/* Row 3 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            {categoryRows.row3.map((cat) => {
-              const isActive = selectedCategory === cat;
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            {categoryPills.row3.map((cat) => {
+              const isActive = activeCategory === cat;
               return (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => setActiveCategory(cat)}
                   type="button"
-                  className={`rounded-full px-4 py-2.5 sm:px-5 sm:py-3 text-[14px] sm:text-[16px] font-medium leading-[1.2] transition-all ${
+                  className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
-                      : 'bg-surface text-ink hover:bg-[#EAEBED]'
+                      : 'border border-[#CED0D3] bg-white text-ink hover:bg-[#F3F4F6]'
                   }`}
                 >
                   {cat}
@@ -234,67 +203,92 @@ export function Courses() {
             })}
             <button
               type="button"
-              className="px-4 py-2.5 text-[14px] sm:text-[16px] font-medium text-brand transition-opacity hover:opacity-80"
+              className="px-3 py-2 text-[14px] sm:text-[15px] font-medium text-brand hover:underline"
             >
               + More
             </button>
           </div>
         </div>
 
-        {/* 6 Course Cards Grid (Figma Node #33:683, EL-cfe85f8c: 373px x 384px, rounded-3xl) */}
+        {/* 6 Course Cards Grid (Exact Figma Node #33:683, EL-cfe85f8c) */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {(filteredCourses.length > 0 ? filteredCourses : courses).map((course) => (
+          {courses.map((course) => (
             <article
               key={course.id}
-              className="group flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#CED0D3] bg-white p-5 transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-xl"
+              className="group flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#CED0D3] bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-xl"
             >
-              {/* Top Course Visual */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px] bg-surface">
+              {/* Card Photo with 3 Glassmorphism Floating Badges */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px]">
                 <img
-                  src={course.image}
+                  src={course.coverImage}
                   alt={course.title}
                   width={373}
-                  height={200}
+                  height={210}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute left-3 top-3 flex items-center gap-2">
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-medium text-ink shadow-sm backdrop-blur-sm">
-                    {course.lessons} Lessons
+                <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-1 text-[11px] font-medium text-ink">
+                  <span className="rounded-full bg-white/80 px-2.5 py-1 backdrop-blur-md shadow-sm">
+                    {course.lessons}
                   </span>
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-medium text-ink shadow-sm backdrop-blur-sm">
+                  <span className="rounded-full bg-white/80 px-2.5 py-1 backdrop-blur-md shadow-sm">
                     {course.duration}
+                  </span>
+                  <span className="rounded-full bg-white/80 px-2.5 py-1 backdrop-blur-md shadow-sm">
+                    {course.comments}
                   </span>
                 </div>
               </div>
 
               {/* Course Info */}
-              <div className="mt-4 flex flex-1 flex-col justify-between">
+              <div className="mt-5 flex flex-1 flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-medium text-brand">{course.category}</span>
-                    <span className="rounded-full bg-surface px-2.5 py-0.5 text-[11px] font-medium text-muted">
-                      {course.level}
-                    </span>
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="line-clamp-1 font-heading text-[20px] font-bold text-[#040819] transition-colors group-hover:text-brand">
+                      {course.title}
+                    </h3>
+                    <div className="flex items-center gap-1 shrink-0 text-[14px] font-medium text-[#242528]">
+                      <span>{course.rating}</span>
+                      <svg viewBox="0 0 24 24" fill="#CED0D3" className="size-4">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    </div>
                   </div>
-                  <h3 className="mt-2 line-clamp-2 font-heading text-[18px] font-semibold leading-[1.3] text-[#040819] transition-colors group-hover:text-brand">
-                    {course.title}
-                  </h3>
+                  <p className="mt-1 text-[14px] text-brand">by {course.creator}</p>
                 </div>
 
-                <div className="mt-5 border-t border-[#F0F1F3] pt-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                {/* Level + Avatar Stack */}
+                <div className="mt-5 flex items-center justify-between">
+                  <div className="flex items-center gap-2 rounded-full bg-[#F4F5F7] px-3.5 py-1.5 text-[13px] font-medium text-ink">
+                    <svg viewBox="0 0 16 16" fill="currentColor" className="size-3.5 text-muted">
+                      <rect x="1" y="9" width="3" height="6" rx="1" />
+                      <rect x="6" y="5" width="3" height="10" rx="1" />
+                      <rect x="11" y="1" width="3" height="14" rx="1" />
+                    </svg>
+                    <span>{course.level}</span>
+                  </div>
+
+                  {/* Overlapping Student Avatars Stack with 26+ Badge */}
+                  <div className="flex items-center -space-x-2">
+                    {['/assets/testimonials/alex.png', '/assets/testimonials/sarah.png', '/assets/testimonials/james.png'].map((src, i) => (
                       <img
-                        src={course.creator.avatar}
+                        key={i}
+                        src={src}
                         alt=""
-                        className="size-7 rounded-full object-cover"
+                        className="size-7 rounded-full border-2 border-white object-cover"
                       />
-                      <span className="text-[13px] text-muted">{course.creator.name}</span>
-                    </div>
-                    <p className="font-heading text-[16px] font-semibold text-brand">
-                      {course.price}
-                    </p>
+                    ))}
+                    <span className="flex size-7 items-center justify-center rounded-full border-2 border-white bg-accent text-[10px] font-bold text-ink">
+                      26+
+                    </span>
+                  </div>
+                </div>
+
+                {/* Price Bar */}
+                <div className="mt-5 border-t border-[#F0F1F3] pt-4">
+                  <div className="flex items-baseline">
+                    <span className="font-heading text-[24px] font-bold text-brand">{course.price}</span>
+                    <span className="text-[14px] text-muted">/lifetime</span>
                   </div>
                 </div>
               </div>
