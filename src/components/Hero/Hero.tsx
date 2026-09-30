@@ -2,29 +2,38 @@ import { Header } from '../Header/Header';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand text-subtle">
-      {/* Background Grid */}
+    <section className="relative overflow-hidden bg-brand text-subtle min-h-[980px] lg:h-[1024px]">
+      {/* Background Grid (Figma Node #12:224) */}
       <img
         src="/assets/hero/hero-grid.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[1024px] w-[1440px] -translate-x-1/2 max-w-none opacity-20"
+        className="pointer-events-none absolute left-1/2 top-0 h-[1024px] w-[1440px] -translate-x-1/2 max-w-none opacity-15"
       />
 
-      {/* Exact 3D Ornaments from Figma (Node #46:79) */}
-      <img
-        src="/assets/hero/ornament.png"
-        alt=""
+      {/* Solid Lime Arc / Circle behind Hero Person (Figma Node #1:1866) */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[1024px] w-[1440px] -translate-x-1/2 max-w-none object-contain"
+        className="pointer-events-none absolute left-1/2 top-[460px] h-[1050px] w-[1050px] -translate-x-1/2 rounded-full bg-[#CBFC01]"
       />
+
+      {/* Exact 3D Ornaments from Figma (Node #46:79 at y: 221px, width: 1719px) */}
+      <div className="pointer-events-none absolute left-1/2 top-[180px] h-[800px] w-[1720px] -translate-x-1/2" aria-hidden="true">
+        <img
+          src="/assets/hero/ornament.png"
+          alt=""
+          width={1719}
+          height={803}
+          className="h-full w-full object-contain"
+        />
+      </div>
 
       <Header />
 
-      <div className="relative z-10 mx-auto flex w-[1200px] max-w-full flex-col items-center gap-[40px] px-6 pt-[30px]">
+      <div className="relative z-10 mx-auto flex w-[1200px] max-w-full flex-col items-center gap-[40px] px-6 pt-[20px]">
         {/* Hero Title & Subtext */}
         <div className="flex flex-col items-center gap-6 text-center">
-          <h1 className="max-w-[935px] font-heading text-[48px] sm:text-[60px] lg:text-[72px] font-semibold leading-[1.15] tracking-[-0.02em] text-white">
+          <h1 className="max-w-[935px] font-heading text-[44px] sm:text-[56px] lg:text-[72px] font-semibold leading-[1.15] tracking-[-0.02em] text-white">
             Get Access to Hundreds
             <br />
             Courses Available
@@ -68,25 +77,19 @@ export function Hero() {
         </form>
       </div>
 
-      {/* Hero Visual Presentation with Solid Lime Arc & Floating Badges */}
-      <div className="relative mx-auto mt-6 h-[460px] sm:h-[500px] w-full max-w-[800px] px-4">
-        {/* Solid Lime Dome / Semi-Circle Arc directly behind the person (Figma Node #1:1866) */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 left-1/2 h-[340px] sm:h-[390px] w-[540px] sm:w-[620px] -translate-x-1/2 rounded-t-full bg-[#CBFC01]"
-        />
-
+      {/* Hero Visual Area with Person & 3 Floating Metric Badges */}
+      <div className="relative mx-auto mt-4 h-[480px] sm:h-[520px] w-full max-w-[760px] px-4">
         {/* Main Hero Person */}
         <img
           src="/assets/hero/hero-person.png"
           alt="A course creator presenting to students"
           width={578}
           height={541}
-          className="relative z-10 mx-auto h-[460px] sm:h-[500px] w-auto max-w-full object-contain"
+          className="relative z-10 mx-auto h-[480px] sm:h-[530px] w-auto max-w-full object-contain"
         />
 
-        {/* Floating Badge 1: UI/UX Design (Figma Node #46:126) */}
-        <div className="absolute left-2 sm:left-4 top-[100px] z-20 rounded-[18px] bg-white p-4 shadow-xl">
+        {/* Badge 1: UI/UX Design (Figma Node #46:126) */}
+        <div className="absolute left-2 sm:-left-4 top-[100px] z-20 rounded-[16px] bg-white p-4 shadow-xl">
           <p className="font-medium text-[15px] leading-[1.2] text-ink">UI/UX Design</p>
           <div className="mt-1 flex items-center gap-2 text-[12px] text-muted">
             <span>200 Courses</span>
@@ -95,8 +98,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Floating Badge 2: Learning Progress 55% (Figma Node #1:1797) */}
-        <div className="absolute right-2 sm:right-6 top-[80px] z-20 w-[200px] sm:w-[220px] rounded-[18px] bg-white p-4 shadow-xl">
+        {/* Badge 2: Learning Progress 55% (Figma Node #1:1797) */}
+        <div className="absolute right-2 sm:-right-4 top-[80px] z-20 w-[200px] sm:w-[220px] rounded-[16px] bg-white p-4 shadow-xl">
           <p className="text-[13px] font-medium leading-[1.2] text-ink">Learning Progress</p>
           <p className="mt-1 font-heading text-[38px] sm:text-[44px] font-semibold leading-[1.1] tracking-[-0.01em] text-ink">
             55%
@@ -106,8 +109,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Floating Badge 3: Happy Students with Avatar Stack (Figma Node #1:1821) */}
-        <div className="absolute left-4 sm:left-12 bottom-4 z-20 rounded-[18px] bg-white p-4 shadow-xl">
+        {/* Badge 3: Happy Students with Avatar Stack (Figma Node #1:1821) */}
+        <div className="absolute left-4 sm:left-2 bottom-4 z-20 rounded-[16px] bg-white p-4 shadow-xl">
           <div className="flex items-center justify-between gap-4">
             <p className="text-[14px] font-medium leading-[1.2] text-ink">Happy Students</p>
             <div className="flex items-center gap-1 text-[12px] text-muted">
