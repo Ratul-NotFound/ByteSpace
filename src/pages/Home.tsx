@@ -1,8 +1,10 @@
 import { Hero } from '../components/Hero/Hero';
 import { Partners } from '../components/Partners/Partners';
+import { Courses } from '../components/Courses/Courses';
+import { Categories } from '../components/Categories/Categories';
 import { Growth } from '../components/Growth/Growth';
-import { Testimonials } from '../components/Testimonials/Testimonials';
 import { CallToAction } from '../components/CallToAction/CallToAction';
+import { Testimonials } from '../components/Testimonials/Testimonials';
 import { Footer } from '../components/Footer/Footer';
 
 export default function Home() {
@@ -11,9 +13,11 @@ export default function Home() {
       <main>
         <Hero />
         <Partners />
+        <Courses />
+        <Categories />
         <Growth />
-        <Testimonials />
         <CallToAction />
+        <Testimonials />
       </main>
       <Footer />
     </>
