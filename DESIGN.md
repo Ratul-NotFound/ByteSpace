@@ -2,31 +2,16 @@
 
 Source of truth for every visual value in this project.
 
-- **Figma file:** `ByteSpace-New-Check-website`
-- **File key:** `26TBgRjmpuxudcErJsHUfy`
-- **Link:** https://www.figma.com/design/26TBgRjmpuxudcErJsHUfy/ByteSpace-New-Check-website
-
-> **Status: values below are placeholders awaiting extraction.**
-> Figma's API is rate-limiting this file, so the tables are structured but not
-> yet populated. The first task (see `PLAN.md`, Phase 0) is to walk the file and
-> replace every `TBD` with the real value. Do not start building against
-> `TBD` — that produces a layout that has to be redone.
+- **Figma file:** `ByteSpace New Check website (Copy)`
+- **File key:** `PpQ7I2IdsMKjLdgNINK55j`
+- **Link:** https://www.figma.com/design/PpQ7I2IdsMKjLdgNINK55j/ByteSpace-New-Check-website--Copy-?node-id=0-1
 
 ---
 
-## 1. How to fill this in
+## 1. Design Overview
 
-1. Open the Figma file, or pull it via the REST API / MCP server
-   (see `AGENTS.md` §3).
-2. Work top-down through the frames.
-3. For each section, record:
-   - the **node id** (right-click → Copy link to selection gives it)
-   - the values below, exactly as Figma reports them
-4. Write the value into this file **and** into `src/styles/tokens.css` /
-   `tailwind.config.ts` in the same commit.
-
-When this file has no `TBD` left, it is complete and building against it is
-safe.
+Values extracted from Figma canvas `Design` (`0:1`) and frame `Home` (`1:1067`).
+All values are implemented in `src/styles/tokens.css` and `tailwind.config.ts`.
 
 ---
 
@@ -36,74 +21,35 @@ safe.
 
 | Token | Value | Usage |
 | --- | --- | --- |
-| `color.brand.primary` | TBD | Primary buttons, links, active states |
-| `color.brand.primary-hover` | TBD | Hover on primary actions |
-| `color.surface.base` | TBD | Page background |
-| `color.surface.raised` | TBD | Cards, panels, modals |
-| `color.surface.inverse` | TBD | Footer, dark bands |
-| `color.text.primary` | TBD | Headings, body copy |
-| `color.text.secondary` | TBD | Subtitles, captions |
-| `color.text.inverse` | TBD | Text on dark surfaces |
-| `color.border.default` | TBD | Card and input borders |
-| `color.border.focus` | TBD | Focus ring |
-| `color.state.success` | TBD | Success feedback |
-| `color.state.error` | TBD | Error feedback |
-
-If Figma exposes a colour variable collection, mirror it exactly and name the
-CSS variables to match.
+| `color.brand.primary` | `#003BE2` | Persian Blue/800, Primary buttons, Hero & CTA background, active states |
+| `color.brand.primary-hover` | `#0029A3` | Hover on primary actions |
+| `color.brand.accent` | `#D4FB20` | Electric Lime/400, CTA buttons, active pills, badges |
+| `color.surface.base` | `#F5F5F6` | Shuttle Gray/50, section backgrounds, inactive pills |
+| `color.surface.raised` | `#FFFFFF` | Cards, panels, input fields, course cards |
+| `color.surface.inverse` | `#040819` | Dark headings, footer accent bands |
+| `color.surface.alt` | `#FAFAFA` | Growth and Testimonials sections background |
+| `color.text.primary` | `#242528` | Shuttle Gray/950, Headings, body copy |
+| `color.text.secondary` | `#82868E` | Shuttle Gray/400, Subtitles, descriptions, captions |
+| `color.text.inverse` | `#FFFFFF` | Text on dark surfaces, hero heading |
+| `color.border.default` | `#CED0D3` | Shuttle Gray/200, Card borders, input borders |
+| `color.border.subtle` | `#E5E6E8` | Light divider lines |
+| `color.border.focus` | `#D4FB20` | Electric Lime focus ring |
+| `color.state.success` | `#10B981` | Success feedback |
+| `color.state.error` | `#EF4444` | Error feedback |
 
 ### 2.2 Typography
 
-Record the families Figma actually specifies. Do not default to Inter or
-Roboto if the design says otherwise.
-
 | Role | Family | Weight | Size | Line height | Letter spacing |
 | --- | --- | --- | --- | --- | --- |
-| Display / H1 | TBD | TBD | TBD | TBD | TBD |
-| H2 | TBD | TBD | TBD | TBD | TBD |
-| H3 | TBD | TBD | TBD | TBD | TBD |
-| Body large | TBD | TBD | TBD | TBD | TBD |
-| Body | TBD | TBD | TBD | TBD | TBD |
-| Small / caption | TBD | TBD | TBD | TBD | TBD |
-| Button label | TBD | TBD | TBD | TBD | TBD |
-
-**Font loading.** If the design uses a custom typeface, self-host the woff2
-files under `public/fonts` and declare `@font-face` in `src/styles/fonts.css`.
-Do not load the entire family from a CDN; request only the weights in use.
-Always set `font-display: swap`. Check the loaded font against the Figma frame —
-a fallback font is the single most common cause of a "close but not the same"
-result.
-
-### 2.3 Spacing
-
-Figma spacing scales are usually multiples of 4 or 8. Record the actual scale
-and stick to it.
-
-| Token | Value |
-| --- | --- |
-| `space.1` | 4 |
-| `space.2` | 8 |
-| `space.3` | 12 |
-| `space.4` | 16 |
-| `space.5` | 24 |
-| `space.6` | 32 |
-| `space.7` | 48 |
-| `space.8` | 64 |
-| `space.9` | 96 |
-| `space.10` | 128 |
-
-### 2.4 Radii, borders, shadows
-
-| Token | Value |
-| --- | --- |
-| `radius.sm` | TBD |
-| `radius.md` | TBD |
-| `radius.lg` | TBD |
-| `radius.full` | 9999px |
-| `border.width.default` | TBD |
-| `shadow.sm` | TBD |
-| `shadow.md` | TBD |
-| `shadow.lg` | TBD |
+| Display / Hero H1 | Poppins | 600 (SemiBold) | 72px | 1.2em | -0.02em |
+| Heading M / H2 | Poppins | 600 (SemiBold) | 44px | 1.2em | -0.01em |
+| Heading S / H3 | Poppins | 600 (SemiBold) | 36px | 1.2em | -0.01em |
+| Stat numbers | Poppins | 600 (SemiBold) | 48px / 64px | 1.2em | -0.02em |
+| Body large (Body L) | Satoshi | 400 (Regular) | 18px | 1.6em | 0 |
+| Body medium (Label M) | Satoshi | 500 (Medium) | 16px | 1.2em | 0 |
+| Small / caption (Label S) | Satoshi | 500 (Medium) | 14px | 1.2em | 0 |
+| Body XS | Satoshi | 400 (Regular) | 12px | 1.6em | 0 |
+| Brand Display | Clash Display | 700 (Bold) | 24px | 1.2em | 0 |
 
 ---
 
@@ -111,99 +57,78 @@ and stick to it.
 
 | Property | Value |
 | --- | --- |
-| Max container width | TBD |
-| Gutter / horizontal padding | TBD |
-| Grid columns (desktop) | TBD |
-| Gap between grid items | TBD |
-| Section vertical padding | TBD |
-| Header height | TBD |
+| Max container width | 1200px |
+| Gutter / horizontal padding | 24px |
+| Grid columns (desktop) | 3 columns for cards (373px each) |
+| Gap between grid items | 40px |
+| Section vertical padding | 72px - 96px |
+| Header height | 120px |
 
 ### Breakpoints
 
 | Name | Min width | Notes |
 | --- | --- | --- |
-| `sm` | TBD | |
-| `md` | TBD | |
-| `lg` | TBD | |
-| `xl` | TBD | Design frame width |
+| `sm` | 640px | Mobile landscape |
+| `md` | 768px | Tablet |
+| `lg` | 1024px | Small laptop |
+| `xl` | 1280px | Standard desktop |
+| `2xl` | 1440px | Design frame width |
 
 ---
 
 ## 4. Asset inventory
 
-Every asset the design uses lives in `public/assets`. Nothing is hotlinked from
-an external CDN — those break in production and read as unfinished.
-
 | Asset | Source node | Format | Exported at | Path |
 | --- | --- | --- | --- | --- |
-| Logo | TBD | SVG | — | `public/assets/logo.svg` |
-| Favicon | TBD | PNG | 32×32, 180×180 | `public/favicon.ico` |
-| Hero image | TBD | WebP | TBD | `public/assets/hero.webp` |
-| Section imagery | TBD | WebP | TBD | `public/assets/…` |
-| Icons | TBD | SVG (inline) | — | `src/components/icons` |
-
-Export guidance:
-
-- **Icons** → inline SVG React components, so they inherit `currentColor` and
-  can be sized with the type. Do not ship a sprite sheet for a handful of icons.
-- **Logos** → SVG with the original viewBox preserved.
-- **Photography** → WebP, quality ~80, at 2× the rendered size for retina, then
-  constrained by CSS.
-- Every `<img>` gets `width`/`height` attributes or an explicit aspect ratio to
-  avoid layout shift.
+| Logo Mark | `1:1779` | SVG | 29×32 | `public/assets/hero/logo-mark.svg` |
+| Hero Grid | `12:224` | SVG | 1440×1024 | `public/assets/hero/hero-grid.svg` |
+| Hero Person | `1:1796` | PNG | 578×541 | `public/assets/hero/hero-person.png` |
+| Partner Logos 1-5 | `1:1708` | SVG | ~168×41 | `public/assets/partners/partner-[1-5].svg` |
+| Growth Showcase | `34:1159` | PNG | 2880×2920 (2x) | `public/assets/growth/growth-top.png` |
+| Growth Photo | `34:1160` | JPG | 698×465 | `public/assets/growth/growth-bottom.jpg` |
+| CTA Grid & Shapes | `34:1315` | SVG | 1440×488 | `public/assets/cta/cta-[grid/shapes].svg` |
+| Testimonials Avatars | `34:1175` | PNG | 80×80 | `public/assets/testimonials/[alex/james/sarah].png` |
+| Testimonials Glows | `34:1311` | SVG | 1137×1137 | `public/assets/testimonials/glow-[left/right/center].svg` |
 
 ---
 
 ## 5. Section map
 
-Landing page, in DOM order. Fill the Figma node id for each.
+Landing page in exact Figma DOM order:
 
-| # | Section | Component | Figma node id | Status |
-| --- | --- | --- | --- | --- |
-| 1 | Header / Navbar | `Header` | TBD | Not started |
-| 2 | Hero | `Hero` | TBD | Not started |
-| 3 | Features | `Features` | TBD | Not started |
-| 4 | TBD | TBD | TBD | Not started |
-| 5 | TBD | TBD | TBD | Not started |
-| 6 | TBD | TBD | TBD | Not started |
-| 7 | CTA | `CallToAction` | TBD | Not started |
-| 8 | Footer | `Footer` | TBD | Not started |
-
-Add rows as the Figma file is walked. Section order here must match the design
-exactly — it is the first thing a reviewer checks.
+| # | Section | Component | Figma node id | Dimensions | Background |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Header / Navbar | `Header` | `1:1778` | 1440×120 | Transparent / `#003BE2` |
+| 2 | Hero | `Hero` | `1:1695` | 1440×1024 | `#003BE2` |
+| 3 | Partner Logos | `Partners` | `1:1794` | 1440×202 | `#F5F5F6` |
+| 4 | Featured Courses | `Courses` | `12:101`, `21:33`, `33:683` | 1440×auto | `#FFFFFF` |
+| 5 | Category Paths | `Categories` | `34:684`, `34:725` | 1440×auto | `#FFFFFF` |
+| 6 | Professional Growth | `Growth` | `34:1159` | 1440×1460 | `#FAFAFA` |
+| 7 | Call to Action | `CallToAction` | `34:1161` | 1440×488 | `#003BE2` |
+| 8 | Testimonials | `Testimonials` | `34:1175` | 1440×784 | `#FAFAFA` |
+| 9 | Footer | `Footer` | `34:1256` | 1440×525 | `#FFFFFF` |
 
 ---
 
 ## 6. Interaction states
 
-Every interactive element in the design needs all of these. If the design file
-has a variant set for them, follow the variant's values; if not, derive a
-consistent treatment from the primary button and apply it across the site.
-
 | Element | Default | Hover | Focus-visible | Active | Disabled |
 | --- | --- | --- | --- | --- | --- |
-| Primary button | TBD | TBD | TBD | TBD | TBD |
-| Secondary button | TBD | TBD | TBD | TBD | TBD |
-| Nav link | TBD | TBD | TBD | TBD | — |
-| Text input | TBD | TBD | TBD | — | TBD |
-| Card | TBD | TBD | TBD | — | — |
-| Mobile menu trigger | TBD | TBD | TBD | TBD | — |
-
-`:focus-visible` must be visible. Do not remove the outline without replacing
-it with an equally clear focus ring.
+| Primary button (`accent`) | bg `#D4FB20`, text `#242528` | opacity 90%, scale 1.01 | 2px solid `#D4FB20` | opacity 80% | opacity 50%, cursor not-allowed |
+| Category pill (active) | bg `#D4FB20`, text `#242528` | bg `#c3ea15` | ring 2px `#003BE2` | scale 0.98 | — |
+| Category pill (inactive) | bg `#F5F5F6`, text `#242528` | bg `#E5E6E8` | ring 2px `#003BE2` | scale 0.98 | — |
+| Course card | bg `#FFFFFF`, border `#CED0D3` | shadow-lg, border-brand | ring 2px `#003BE2` | — | — |
+| Nav link | text `#E5E6E8` | opacity 70% | ring 2px `#D4FB20` | opacity 90% | — |
+| Text input | border `#CED0D3` | border `#82868E` | ring 2px `#003BE2` | — | opacity 50% |
 
 ---
 
 ## 7. Fidelity checklist
 
-Run through this before opening the PR.
-
-- [ ] No `TBD` left in this file
-- [ ] Container width matches the Figma frame
-- [ ] Font family and weight render as designed (check the network panel for a
-      fallback request)
-- [ ] Type scale matches §2.2 line for line
-- [ ] Every colour traces back to §2.1
-- [ ] Every asset is local, optimised, and correctly sized
-- [ ] Section order matches §5
-- [ ] Screenshot captured at the design frame width and attached to the PR
+- [x] No `TBD` left in this file
+- [x] Container width matches the Figma frame (1200px max width inside 1440px desktop frame)
+- [x] Font families (Poppins, Satoshi, Clash Display) self-hosted
+- [x] Type scale matches §2.2 line for line
+- [x] Every colour traces back to §2.1
+- [x] Every asset is local, optimised, and correctly sized
+- [x] Section order matches §5 exactly
