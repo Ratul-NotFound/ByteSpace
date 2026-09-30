@@ -60,7 +60,7 @@ export function Testimonials() {
           {testimonials.map((item) => (
             <div
               key={item.name}
-              className="flex flex-col items-start gap-6 rounded-[24px] border border-[#CED0D3] bg-white p-7 shadow-sm transition-all hover:shadow-md"
+              className="flex flex-col items-start gap-6 rounded-[24px] border border-[#E5E7EB] bg-white p-7 shadow-sm transition-all hover:shadow-md"
             >
               <img
                 src={item.avatar}

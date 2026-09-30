@@ -12,13 +12,13 @@ export function Partners() {
       <div className="mx-auto w-[1200px] max-w-full px-6">
         <ul className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 lg:gap-[72px]">
           {partnerLogos.map((logo) => (
-            <li key={logo.src} className="flex items-center justify-center opacity-80 transition-opacity hover:opacity-100">
+            <li key={logo.src} className="flex items-center justify-center opacity-70 transition-opacity hover:opacity-100">
               <img
                 src={logo.src}
                 alt="Partner logo"
                 width={logo.width}
                 height={logo.height}
-                className="h-[36px] sm:h-[41px] w-auto max-w-[150px] sm:max-w-[168px] object-contain"
+                className="h-[34px] sm:h-[38px] w-auto max-w-[150px] sm:max-w-[168px] object-contain"
               />
             </li>
           ))}

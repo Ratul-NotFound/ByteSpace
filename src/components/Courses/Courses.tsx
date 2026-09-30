@@ -152,7 +152,7 @@ export function Courses() {
                   className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
-                      : 'border border-[#CED0D3] bg-white text-ink hover:bg-[#F3F4F6]'
+                      : 'bg-[#F5F5F6] text-[#242528] hover:bg-[#EBECEF]'
                   }`}
                 >
                   {cat}
@@ -173,7 +173,7 @@ export function Courses() {
                   className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
-                      : 'border border-[#CED0D3] bg-white text-ink hover:bg-[#F3F4F6]'
+                      : 'bg-[#F5F5F6] text-[#242528] hover:bg-[#EBECEF]'
                   }`}
                 >
                   {cat}
@@ -194,7 +194,7 @@ export function Courses() {
                   className={`rounded-full px-5 py-2 text-[14px] sm:text-[15px] font-medium leading-[1.2] transition-all ${
                     isActive
                       ? 'bg-accent text-ink shadow-sm'
-                      : 'border border-[#CED0D3] bg-white text-ink hover:bg-[#F3F4F6]'
+                      : 'bg-[#F5F5F6] text-[#242528] hover:bg-[#EBECEF]'
                   }`}
                 >
                   {cat}
@@ -217,7 +217,7 @@ export function Courses() {
               key={course.id}
               className="group flex flex-col justify-between overflow-hidden rounded-[24px] border border-[#CED0D3] bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-xl"
             >
-              {/* Card Photo with 3 Glassmorphism Floating Badges */}
+              {/* Card Photo with 3 Dark Frosted Floating Badges */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px]">
                 <img
                   src={course.coverImage}
@@ -227,14 +227,14 @@ export function Courses() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-1 text-[11px] font-medium text-ink">
-                  <span className="rounded-full bg-white/80 px-2.5 py-1 backdrop-blur-md shadow-sm">
+                <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-1 text-[11px] font-medium text-white">
+                  <span className="rounded-full bg-black/60 px-2.5 py-1 backdrop-blur-md shadow-sm">
                     {course.lessons}
                   </span>
-                  <span className="rounded-full bg-white/80 px-2.5 py-1 backdrop-blur-md shadow-sm">
+                  <span className="rounded-full bg-black/60 px-2.5 py-1 backdrop-blur-md shadow-sm">
                     {course.duration}
                   </span>
-                  <span className="rounded-full bg-white/80 px-2.5 py-1 backdrop-blur-md shadow-sm">
+                  <span className="rounded-full bg-black/60 px-2.5 py-1 backdrop-blur-md shadow-sm">
                     {course.comments}
                   </span>
                 </div>
@@ -244,22 +244,22 @@ export function Courses() {
               <div className="mt-5 flex flex-1 flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="line-clamp-1 font-heading text-[20px] font-bold text-[#040819] transition-colors group-hover:text-brand">
+                    <h3 className="line-clamp-2 font-heading text-[22px] font-bold text-[#040819] leading-tight transition-colors group-hover:text-brand">
                       {course.title}
                     </h3>
-                    <div className="flex items-center gap-1 shrink-0 text-[14px] font-medium text-[#242528]">
+                    <div className="flex items-center gap-1 shrink-0 text-[15px] font-bold text-[#242528] pt-1">
                       <span>{course.rating}</span>
                       <svg viewBox="0 0 24 24" fill="#CED0D3" className="size-4">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                       </svg>
                     </div>
                   </div>
-                  <p className="mt-1 text-[14px] text-brand">by {course.creator}</p>
+                  <p className="mt-1 text-[15px] text-brand">by {course.creator}</p>
                 </div>
 
                 {/* Level + Avatar Stack */}
                 <div className="mt-5 flex items-center justify-between">
-                  <div className="flex items-center gap-2 rounded-full bg-[#F4F5F7] px-3.5 py-1.5 text-[13px] font-medium text-ink">
+                  <div className="flex items-center gap-2 rounded-full bg-[#F4F5F7] px-4 py-2 text-[13px] font-semibold text-ink">
                     <svg viewBox="0 0 16 16" fill="currentColor" className="size-3.5 text-muted">
                       <rect x="1" y="9" width="3" height="6" rx="1" />
                       <rect x="6" y="5" width="3" height="10" rx="1" />
@@ -275,10 +275,10 @@ export function Courses() {
                         key={i}
                         src={src}
                         alt=""
-                        className="size-7 rounded-full border-2 border-white object-cover"
+                        className="size-8 rounded-full border-2 border-white object-cover"
                       />
                     ))}
-                    <span className="flex size-7 items-center justify-center rounded-full border-2 border-white bg-accent text-[10px] font-bold text-ink">
+                    <span className="flex size-8 items-center justify-center rounded-full border-2 border-white bg-accent text-[11px] font-bold text-ink">
                       26+
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export function Courses() {
                 {/* Price Bar */}
                 <div className="mt-5 border-t border-[#F0F1F3] pt-4">
                   <div className="flex items-baseline">
-                    <span className="font-heading text-[24px] font-bold text-brand">{course.price}</span>
+                    <span className="font-heading text-[26px] font-bold text-brand">{course.price}</span>
                     <span className="text-[14px] text-muted">/lifetime</span>
                   </div>
                 </div>

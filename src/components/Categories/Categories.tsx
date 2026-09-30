@@ -89,7 +89,7 @@ export function Categories() {
           {categories.map((cat) => (
             <div
               key={cat.id}
-              className="group flex flex-col items-center justify-center rounded-[20px] border border-[#CED0D3] bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center justify-center rounded-[20px] border border-[#E5E7EB] bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-md cursor-pointer"
             >
               {/* Circular Lime Icon Badge */}
               <div className="flex size-14 items-center justify-center rounded-full bg-accent transition-transform duration-200 group-hover:scale-110">
